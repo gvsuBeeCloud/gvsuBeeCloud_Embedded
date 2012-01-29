@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+
+public class Parser {
+	
+	public static ArrayList parse(String inFromHive) {
+		int NumInputs = 6;
+		ArrayList Data = new ArrayList(NumInputs);
+		String ID = inFromHive.substring(0,5) ;
+		Double Lat = new Double(inFromHive.substring(6,12));
+		Double Long = new Double(inFromHive.substring(13,19));
+		int TempIn = Integer.valueOf(inFromHive.substring(20, 22));
+		int TempExt = Integer.valueOf(inFromHive.substring(23, 25));
+		Double Weight = new Double(inFromHive.substring(26, 31));
+		
+		Data.add(ID);
+		Data.add(Lat);
+		Data.add(Long);
+		Data.add(TempIn);
+		Data.add(TempExt);
+		Data.add(Weight);
+		
+		return Data;
+	}
+
+}

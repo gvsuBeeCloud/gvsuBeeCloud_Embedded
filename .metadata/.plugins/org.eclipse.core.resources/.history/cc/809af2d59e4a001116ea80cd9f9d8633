@@ -1,0 +1,10 @@
+import java.lang.Object;
+
+public class Parser {
+	
+	public static void parse(String inFromHive) {
+		//Data = new Array;
+//		return Data;
+	}
+
+}
