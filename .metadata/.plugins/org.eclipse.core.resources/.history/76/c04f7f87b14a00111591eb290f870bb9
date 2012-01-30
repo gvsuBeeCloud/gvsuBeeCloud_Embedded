@@ -1,0 +1,7 @@
+
+public class ValidateCDM {
+
+	public static boolean validate(ArrayList Data) {
+		
+	}
+}
