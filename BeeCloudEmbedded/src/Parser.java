@@ -24,8 +24,9 @@ public class Parser {
 
 	public static void main (String args[])
 	{
+		//testing input string
 		String string = "abcde075.555075.555200095187.02";
-		ArrayList DataMain = parseData(string,6);
+		ArrayList<Comparable> DataMain = parseData(string,6);
 		
 		for(int i=0;i<6;i++)
 			System.out.println(DataMain.get(i));
