@@ -1,11 +1,6 @@
 ID	String	0	5
-
 Lat	Double	5	7
-
 Long	Double	12	7
-
 TempIn	int	19	3
-
 TempExt	int	22	3
-
 Weight	Double	25	6
