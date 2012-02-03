@@ -36,7 +36,7 @@ public class remoteServerSend
                 //Step 2 - Build the Query String
                         try
                         {
-                                FileInputStream fstream = new FileInputStream("parsedInfo.txt");
+                                FileInputStream fstream = new FileInputStream("..\\parsedInfo.txt");
                                 DataInputStream in = new DataInputStream(fstream);
                                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
   
