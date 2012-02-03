@@ -79,6 +79,14 @@ public class Parser {
 		
 		for(int i=0;i<DataMain.size();i++)
 			System.out.println(DataMain.get(i));
+		
+		//second test, bad data
+		System.out.println("\nSecond Test");
+		string = "xxxxx075.555075.555200095187.02";
+		DataMain = parseData(string,6);
+		
+		for(int i=0;i<DataMain.size();i++)
+			System.out.println(DataMain.get(i));
 	}
 	
 }
