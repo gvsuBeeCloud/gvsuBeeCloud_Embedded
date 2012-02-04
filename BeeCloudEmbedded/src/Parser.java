@@ -19,10 +19,10 @@ public class Parser {
 	        inFromHive = br.readLine();
 		}
 		catch (Exception e)
-        {
+        	{
 			error=true;
-//            System.err.println("Error: " + e.getMessage());
-        }
+//			System.err.println("Error: " + e.getMessage());
+		}
 		try
 		{
 			FileInputStream fstream = new FileInputStream("..\\CDM.txt");
@@ -82,10 +82,10 @@ public class Parser {
 /////////////DEBUG/////////////	        
 		}
 		catch (Exception e)
-        {
+		{
 			error=true;
-//            System.err.println("Error: " + e.getMessage());
-        }
+//			System.err.println("Error: " + e.getMessage());
+		}
 		if(error)
 		{
 			Data.clear();
