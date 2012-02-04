@@ -36,7 +36,7 @@ public class remoteServerSend
                 //Step 2 - Build the Query String
                         try
                         {
-                                FileInputStream fstream = new FileInputStream("parsedInfo.txt");
+                                FileInputStream fstream = new FileInputStream("..\\parsedInfo.txt");
                                 DataInputStream in = new DataInputStream(fstream);
                                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
   
@@ -45,7 +45,7 @@ public class remoteServerSend
                                 String baseCreateURL = "";
                                 while ((readIn = br.readLine()) != null)   
                                 {
-                                        baseCreateURL = "http://beecloudproject.appspot.com/createHive?";
+                                        baseCreateURL = "http://beecloudproject.appspot.com/updateHive?";
                                         createURL = readIn.replaceAll("PARSEDDATAKEY=", "");
                                         createURL = createURL.replaceAll("PARSEDDATAVALUE", "");
                                         createURL = createURL.replaceAll(",","&");

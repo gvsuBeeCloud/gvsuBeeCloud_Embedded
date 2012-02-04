@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-#Sun Jan 29 14:12:44 EST 2012
-eclipse.preferences.version=1
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1327864245511" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="1327864245511" name\="jdk1.6.0_26" path\="/usr/java/jdk1.6.0_26"/>\n</vmType>\n</vmSettings>\n
-=======
-#Sun Jan 29 12:57:31 EST 2012
-eclipse.preferences.version=1
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1327855623320">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1327855623320" name\="jre7" path\="C\:\\Program Files\\Java\\jre7"/>\r\n</vmType>\r\n</vmSettings>\r\n
->>>>>>> 833e8a2022ba66e61cb9e021012e2bf7f3fce16a

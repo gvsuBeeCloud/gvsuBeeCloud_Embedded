@@ -1,0 +1,6 @@
+ID	String	0
+Lat	Double	1
+Long	Double	2
+TempIn	int	3
+TempExt	int	4
+Weight	Double	5
