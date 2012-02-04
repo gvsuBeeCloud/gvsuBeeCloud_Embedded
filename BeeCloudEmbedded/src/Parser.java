@@ -6,15 +6,30 @@ import java.util.ArrayList;
 
 public class Parser {
 	
-	public static ArrayList<Comparable> parseData(String inFromHive, int NumInputs) {
+	public static ArrayList<Comparable> parseData(String File, int NumInputs) {
 
 		ArrayList<Comparable> Data = new ArrayList<Comparable>(NumInputs);
+		boolean error = false;
+		String inFromHive = null;
+		try
+		{
+			FileInputStream fstream = new FileInputStream(File);
+			DataInputStream in = new DataInputStream(fstream);
+	        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+	        inFromHive = br.readLine();
+		}
+		catch (Exception e)
+        {
+			error=true;
+//            System.err.println("Error: " + e.getMessage());
+        }
 		try
 		{
 			FileInputStream fstream = new FileInputStream("..\\CDM.txt");
 			DataInputStream in = new DataInputStream(fstream);
 	        BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
+			String[] hiveInfo = inFromHive.split(",");
 	        
 	        String readIn;
 	        while ((readIn = br.readLine()) != null) 
@@ -29,17 +44,20 @@ public class Parser {
 //	        	System.out.println(subs[3]);
 /////////////DEBUG/////////////
 	        	if(subs[1].compareTo("String")==0) {
-	        		String tempS=inFromHive.substring(Integer.valueOf(subs[2]), (Integer.valueOf(subs[2])+Integer.valueOf(subs[3])));
+//	        		String tempS=inFromHive.substring(Integer.valueOf(subs[2]), (Integer.valueOf(subs[2])+Integer.valueOf(subs[3])));
+	        		String tempS=hiveInfo[Integer.valueOf(subs[2])];
 	        		Data.add(tempS);
 	        		if(tempS.compareTo("xxxxx")==0)
 	        			break;
 		        }
 	        	else if(subs[1].compareTo("Double")==0) {
-	        		Double tempD=new Double(inFromHive.substring(Integer.valueOf(subs[2]), (Integer.valueOf(subs[2])+Integer.valueOf(subs[3]))));
+//	        		Double tempD=new Double(inFromHive.substring(Integer.valueOf(subs[2]), (Integer.valueOf(subs[2])+Integer.valueOf(subs[3]))));
+	        		Double tempD=new Double(hiveInfo[Integer.valueOf(subs[2])]);
 	        		Data.add(tempD);
 	        	}
 	        	else if(subs[1].compareTo("int")==0) {
-	        		int tempI=Integer.valueOf(inFromHive.substring(Integer.valueOf(subs[2]), (Integer.valueOf(subs[2])+Integer.valueOf(subs[3]))));
+//	        		int tempI=Integer.valueOf(inFromHive.substring(Integer.valueOf(subs[2]), (Integer.valueOf(subs[2])+Integer.valueOf(subs[3]))));
+	        		int tempI=Integer.valueOf(hiveInfo[Integer.valueOf(subs[2])]);
 	        		Data.add(tempI);
 	        	}
 	        	else {
@@ -65,16 +83,23 @@ public class Parser {
 		}
 		catch (Exception e)
         {
-                System.err.println("Error: " + e.getMessage());
+			error=true;
+//            System.err.println("Error: " + e.getMessage());
         }
-		
-		return Data;
+		if(error)
+		{
+			Data.clear();
+			Data.add("xxxxx");
+			return Data;
+		}
+		else
+			return Data;
 	}
 
 	public static void main (String args[])
 	{
 		//testing input string
-		String string = "abcde075.555075.555200095187.02";
+		String string = "..\\FromHive1.csv";
 		ArrayList<Comparable> DataMain = parseData(string,6);
 		
 		for(int i=0;i<DataMain.size();i++)
@@ -82,7 +107,7 @@ public class Parser {
 		
 		//second test, bad data
 		System.out.println("\nSecond Test");
-		string = "xxxxx075.555075.555200095187.02";
+		string = "..\\FromHive2.csv";
 		DataMain = parseData(string,6);
 		
 		for(int i=0;i<DataMain.size();i++)
