@@ -1,6 +1,6 @@
-ID	String	0
-Lat	Double	1
-Long	Double	2
-TempIn	int	3
-TempExt	int	4
-Weight	Double	5
+ID  String	0 0 0
+Lat	Double	1	-90	90
+Long	Double	2 -180  180
+TempIn	int	3	0	400
+TempExt	int	4	0	200
+Weight	Double	5	0	500
